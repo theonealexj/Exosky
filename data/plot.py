@@ -1,23 +1,26 @@
-
-#The code mounts Google Drive, loads star data from CSV, plots 3D scatter with colors,
-#  applies zoom by scaling axis ranges, and ensures equal aspect ratio for undistorted visualization.
+#This code mounts Google Drive in Colab, loads a CSV of stellar data, 
+# and visualizes stars in 3D. Star sizes reflect stellar radius, colors indicate star type, 
+# and zoom with equal aspect ratio ensures accurate spatial representation, producing an interactive, 
+# proportionally scaled 3D scatter plot of the stellar dataset.
 from google.colab import drive
 drive.mount('/content/gdrive')
 import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-# Load CSV
 df = pd.read_csv("gdrive/MyDrive/NasaHack/HD 70642 b_stars_processed.csv")
 
 fig = plt.figure(figsize=(12, 12))
 ax = fig.add_subplot(111, projection='3d')
 
-# Scatter stars
+size_scale = 2.5  
+df['star_size'] = df['stellar_radius'] * size_scale
+
 sc = ax.scatter(df['x'], df['y'], df['z'],
                 c=df['colour'],
-                s=20, alpha=0.7)
+                s=df['star_size'], alpha=0.7)
 
+zoom_factor = 0.175  
 x_mid, y_mid, z_mid = df['x'].mean(), df['y'].mean(), df['z'].mean()
 x_range = (df['x'].max() - df['x'].min()) * zoom_factor
 y_range = (df['y'].max() - df['y'].min()) * zoom_factor
@@ -36,4 +39,5 @@ def set_aspect_equal_3d(ax):
     ax.set_ylim(centers[1] - max_span/2, centers[1] + max_span/2)
     ax.set_zlim(centers[2] - max_span/2, centers[2] + max_span/2)
 
-set
+set_aspect_equal_3d(ax)
+plt.show()
