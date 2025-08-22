@@ -10,5 +10,8 @@ Your challenge is to develop an app or interface that allows a student user to s
 ## Potential Considerations
 You may (but are not required to) consider the following: Your target audience can include elementary, middle, or high school students — or students at multiple levels! Note that the conversion from star catalog coordinates ("inertial") to surface coordinates ("planet-fixed") depends on the choice of a planet pole orientation. Your tool could: Produce a simplified sky chart depicting each star as a dot (of varying size depending on its apparent brightness) to be exported—for instance as a PDF or PNG for printing (a great way for middle school students to make their own constellations). Produce a photo-realistic map of the sky (e.g., see the Milky Way from an exoplanet). Produce a fisheye rendering that may be explored with virtual reality hardware. Consider making your tool interactive with the capability to display more or less information depending on the target audience: The sky chart star positions will change depending on the assumed (inertial) pole orientation, so the user may want to adjust the two angles (right ascension and declination) defining it. Each star's name and information could be displayed when a user clicks or hovers a cursor on the star. Each user could interactively draw constellations (by joining pairs of stars) and name them. Equatorial and galactic grids and coordinates may be useful to display for higher level users.
 
+## Data From
+https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS
 
+https://gea.esac.esa.int/archive/
 
