@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b0c1a;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://images.pexels.com/photos/17809421/pexels-photo-17809421.jpeg?_gl=1*w8pzvj*_ga*MTM0MTUwNjEuMTc1NDc5NjI3Mw..*_ga_8JE65Q40S6*czE3NTU5MTc5OTAkbzQkZzEkdDE3NTU5MTgwMTkkajMxJGwwJGgw') repeat;
+  z-index: -1;
+  animation: moveStars 200s linear infinite;
+}
+@keyframes moveStars {
+  0% {background-position: 0 0;}
+  100% {background-position: 10000px 10000px;}
+}
+
+header { padding: 2rem; }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #00ffe0;
+  text-shadow: 0 0 10px #00ffe0;
+}
+header p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; line-height: 1.5rem; }
+
+.controls-section { margin: 2rem 0; }
+.controls-section input, .controls-section select {
+  padding: 0.7rem;
+  margin: 0.3rem;
+  border-radius: 25px;
+  border: 2px solid #00ffe0;
+  background: #11142a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+.controls-section button {
+  padding: 0.7rem 1rem;
+  border-radius: 25px;
+  border: none;
+  background: #00bfff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.controls-section button:hover { background: #00ffe0; }
+
+.planets-section { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+.planets-section h2 { color: #00ffe0; font-size: 2.2rem; text-shadow: 0 0 15px #00ffe0; }
+.planets-section h3 { color: #ffdd00; font-size: 1.5rem; text-shadow: 0 0 10px #ffdd00; }
+
+.planet-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.planet-card {
+  background: rgba(17, 20, 42, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.5s;
+}
+.planet-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00ffe0;
+}
+.planet-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #00ffe0;
+  box-shadow: 0 0 15px #00ffe0;
+}
+.planet-card h4 { margin: 0.5rem 0; color: #00bfff; text-shadow: 0 0 8px #00bfff; }
+.planet-card p { margin: 0.3rem 0; color: #ffdd00; text-shadow: 0 0 6px #ffdd00; }
+
+.facts-section {
+  background: rgba(17, 20, 42, 0.9);
+  padding: 2rem;
+  margin: 3rem auto;
+  border-radius: 20px;
+  max-width: 900px;
+}
+.facts-section h2 { color: #ff77aa; text-shadow: 0 0 10px #ff77aa; margin-bottom: 1rem; }
+.facts-section ul { list-style-type: square; padding-left: 1rem; }
+
+.compare-section { background: rgba(0,255,224,0.1); margin: 1rem auto; padding: 1rem; border-radius: 20px; max-width: 800px; }
+footer { text-align: center; padding: 1rem; margin-top: 3rem; color: #aaa; }

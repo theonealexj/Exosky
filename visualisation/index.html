@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanets Educational Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Star Background -->
+  <div id="stars"></div>
+
+  <header>
+    <h1>🌌 Explore Exoplanets & ExoSky</h1>
+    <p>Discover fascinating worlds beyond our solar system! Learn about exoplanets, their distances, and compare them.</p>
+  </header>
+
+  <!-- Search & Filter -->
+  <section class="controls-section">
+    <input type="text" id="searchInput" placeholder="Search for a planet..." onkeyup="searchPlanet()">
+
+    <select id="distanceFilter" onchange="filterDistance()">
+      <option value="all">All Distances</option>
+      <option value="nearby">Nearby (<300 pc)</option>
+      <option value="medium">Medium (300–1000 pc)</option>
+      <option value="far">Far (>1000 pc)</option>
+    </select>
+
+    <select id="compareSelect1">
+      <option value="">Select Planet 1</option>
+    </select>
+    <select id="compareSelect2">
+      <option value="">Select Planet 2</option>
+    </select>
+    <button onclick="comparePlanets()">Compare</button>
+  </section>
+
+  <section class="compare-section" id="compareSection" style="display:none;">
+    <h2>Comparison</h2>
+    <p id="compareResult"></p>
+  </section>
+
+  <section class="planets-section">
+    <h2>Planets</h2>
+
+    
+    <div class="planet-grid" id="nearby">
+      <div class="planet-card" data-distance="29.28" data-category="nearby">
+        <img src="images/hd-70642-b.png" alt="HD 70642 b">
+        <h4>HD 70642 b</h4>
+        <p>29.28 pc</p>
+                <button onclick="window.location.href='index3.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="69.48" data-category="nearby">
+        <img src="images/k2-151-b.png" alt="K2-151 b">
+        <h4>K2-151 b</h4>
+        <p>69.48 pc</p>
+                <button onclick="window.location.href='index4.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="143.65" data-category="nearby">
+        <img src="images/hat-p-54-b.png" alt="HAT-P-54 b">
+        <h4>HAT-P-54 b</h4>
+        <p>143.65 pc</p>
+                <button onclick="window.location.href='index2.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="185.55" data-category="nearby">
+        <img src="images/k2-369-b-removebg-preview.png" alt="K2-369 b">
+        <h4>K2-369 b</h4>
+        <p>185.55 pc</p>
+        <button onclick="window.location.href='index5.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+
+      <div class="planet-card" data-distance="185.55" data-category="nearby">
+        <img src="images/kepler-1907-c.png" alt="K2-369 b">
+        <h4>Kepler 1907</h4>
+        <p>292.55 pc</p>
+        <button onclick="window.location.href='index16.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+
+      <div class="planet-card" data-distance="185.55" data-category="nearby">
+        <img src="images/wasp-15-b.png" alt="K2-369 b">
+        <h4>WASP-15 b</h4>
+        <p>282.55 pc</p>
+        <button onclick="window.location.href='index18.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+
+      <div class="planet-card" data-distance="185.55" data-category="nearby">
+        <img src="images/kepler-20-d.png" alt="K2-369 b">
+        <h4>Kepler-20 d</h4>
+        <p>282.55 pc</p>
+        <button onclick="window.location.href='index1.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+
+      <div class="planet-card" data-distance="185.55" data-category="nearby">
+        <img src="images/wasp-58-b.png" alt="K2-369 b">
+        <h4>WASP-58 b</h4>
+        <p>290.55 pc</p>
+        <button onclick="window.location.href='index19.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+    </div>
+
+    
+    <div class="planet-grid" id="medium">
+      <div class="planet-card" data-distance="335.08" data-category="medium">
+        <img src="images/kepler-61-b.png" alt="Kepler-61 b">
+        <h4>Kepler-61 b</h4>
+        <p>335.08 pc</p>
+        <button onclick="window.location.href='index6.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="340.97" data-category="medium">
+        <img src="images/kepler-1998-b.png" alt="Kepler-1998 b">
+        <h4>Kepler-1998 b</h4>
+        <p>340.97 pc</p>
+        <button onclick="window.location.href='index17.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="769.10" data-category="medium">
+        <img src="images/kepler-1552-b.png" alt="Kepler-1552 b">
+        <h4>Kepler-1552 b</h4>
+        <p>769.10 pc</p>
+        <button onclick="window.location.href='index15.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="847.51" data-category="medium">
+        <img src="images/kepler-480-b.png" alt="Kepler-480 b">
+        <h4>Kepler-480 b</h4>
+        <p>847.51 pc</p>
+        <button onclick="window.location.href='index8.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+      <div class="planet-card" data-distance="847.51" data-category="medium">
+        <img src="images/kepler-818-b.png" alt="Kepler-480 b">
+        <h4>Kepler-818 b</h4>
+        <p>925.51 pc</p>
+        <button onclick="window.location.href='index10.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+
+      </div>
+    </div>
+
+   
+    <div class="planet-grid" id="far">
+      <div class="planet-card" data-distance="1012.41" data-category="far">
+        <img src="images/kepler-976-b.png" alt="Kepler-976 b">
+        <h4>Kepler-976 b</h4>
+        <p>1012.41 pc</p>
+        <button onclick="window.location.href='index13.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+      <div class="planet-card" data-distance="968.54" data-category="far">
+        <img src="images/kepler-188-c.png" alt="Kepler-188 c">
+        <h4>Kepler-188 c</h4>
+        <p>968.54 pc</p>
+        <button onclick="window.location.href='index7.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+      <div class="planet-card" data-distance="1165.34" data-category="far">
+        <img src="images/kepler-902-b.png" alt="Kepler-902 b">
+        <h4>Kepler-902 b</h4>
+        <p>1165.34 pc</p>
+        <button onclick="window.location.href='index12.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+
+      <div class="planet-card" data-distance="1165.34" data-category="far">
+        <img src="images/kepler-1295-b.png" alt="Kepler-902 b">
+        <h4>Kepler-1295 b</h4>
+        <p>1174.34 pc</p>
+        <button onclick="window.location.href='index14.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+
+      <div class="planet-card" data-distance="1165.34" data-category="far">
+        <img src="images/kepler-647-c.png" alt="Kepler-902 b">
+        <h4>Kepler-647 c</h4>
+        <p>1087.34 pc</p>
+        <button onclick="window.location.href='index9.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+
+      <div class="planet-card" data-distance="1165.34" data-category="far">
+        <img src="images/kepler-890-b.png" alt="Kepler-902 b">
+        <h4>Kepler-890 b</h4>
+        <p>1712.34 pc</p>
+        <button onclick="window.location.href='index11.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+      <div class="planet-card" data-distance="1165.34" data-category="far">
+        <img src="images/ogle-2018-blg-1126l-b.png" alt="Kepler-902 b">
+        <h4>OGLE-2018-BLG-1126L b</h4>
+        <p>5700.34 pc</p>
+        <button onclick="window.location.href='index20.html'" style="padding:12px 25px;border:none;border-radius:25px;background:linear-gradient(45deg,#00bfff,#00ffe0);color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffe0,0 0 20px #00bfff;transition:0.3s;" onmouseover="this.style.background='linear-gradient(45deg,#00ffe0,#00bfff)';this.style.boxShadow='0 0 20px #00ffe0,0 0 30px #00bfff';" onmouseout="this.style.background='linear-gradient(45deg,#00bfff,#00ffe0)';this.style.boxShadow='0 0 10px #00ffe0,0 0 20px #00bfff';">View Night Sky</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts-section">
+    <h2>Interesting Facts About Exoplanets</h2>
+    <ul>
+      <li>Some exoplanets orbit two stars, like Tatooine in Star Wars!</li>
+      <li>KELT-9b is one of the hottest exoplanets, at 4000 K.</li>
+      <li>Exoplanets vary from small rocky worlds to massive gas giants.</li>
+      <li>Some exoplanets are tidally locked, always showing one face to their star.</li>
+      <li>Thousands of exoplanets have been discovered using telescopes like Kepler and TESS.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 ExoSky Educational Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
